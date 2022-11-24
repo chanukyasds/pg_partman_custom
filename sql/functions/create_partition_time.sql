@@ -122,7 +122,6 @@ EXECUTE format('SELECT set_config(%L, %L, %L)', 'search_path', v_new_search_path
 SELECT udt_name INTO v_type_name 
 	FROM information_schema.columns WHERE table_name =v_parent_tablename
 	AND table_schema=v_parent_schema AND column_name = v_control;
-RAISE NOTICE '%',v_type_name;
 /* custom type handlers */
 
 -- Determine if this table is a child of a subpartition parent. If so, get limits of what child tables can be created based on parent suffix
